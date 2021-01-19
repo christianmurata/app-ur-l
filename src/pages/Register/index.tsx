@@ -48,13 +48,13 @@ const Register = () => {
     api.post<RegisterResponse>('/api/register', data)
 
     .then(response => {
-      if(response.data.status === 200) {
+      if(response.status === 201) {
         api.post<LoginResponse>('/api/auth/login', { email, password })
 
         .then(response => {
+          setFormSubmited(true);
           localStorage.setItem('token', response.data.token);
           
-          setFormSubmited(true);
           setTimeout(() => history.push('/index'), 2000);
         })
 
@@ -73,10 +73,7 @@ const Register = () => {
         const errors = response.errors;
 
         if(errors) {
-          for(let field in errors){
-            console.log(field);
-            console.log(errors[field]);
-  
+          for(let field in errors){  
             addInvalidFields(field, errors[field]);
           }
         }
