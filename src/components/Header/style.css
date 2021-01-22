@@ -1,0 +1,20 @@
+.header {
+  flex-grow: 1,
+}
+
+.menu{
+  background-color: #3498db !important;
+  margin-bottom: 15px;
+}
+
+.menuTitle {
+  flex-grow: 1;
+  text-decoration: none;
+  color:#fff;
+}
+
+.menuButton{
+  margin-right: 10px;
+  background: none;
+  border: none;
+}
