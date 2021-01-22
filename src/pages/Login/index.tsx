@@ -13,7 +13,7 @@ interface User {
 }
 
 interface LoginResponse {
-  token: string;
+  access_token: string;
 }
 
 const Login = () => {
@@ -29,12 +29,12 @@ const Login = () => {
     if(invalidForm)
       setInvalidForm(false);
 
-    api.post<LoginResponse>('api/auth/login', {email, password})
+    api.post<LoginResponse>('auth/login', {email, password})
 
     .then(response => {
-      localStorage.setItem('token', response.data.token);
+      localStorage.setItem('token', response.data.access_token);
 
-      history.push('/index');
+      history.push('/dashboard');
     })
 
     .catch(err => {

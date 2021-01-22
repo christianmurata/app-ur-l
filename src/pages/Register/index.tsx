@@ -45,11 +45,11 @@ const Register = () => {
       'password_confirmation':confirmPassword // for laravel password authentication
     };
 
-    api.post<RegisterResponse>('/api/register', data)
+    api.post<RegisterResponse>('register', data)
 
     .then(response => {
       if(response.status === 201) {
-        api.post<LoginResponse>('/api/auth/login', { email, password })
+        api.post<LoginResponse>('auth/login', { email, password })
 
         .then(response => {
           setFormSubmited(true);
