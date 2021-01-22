@@ -54,7 +54,6 @@ const Urls = () => {
 
   const [token] = useState(localStorage.getItem('token'));
   const [urls, setUrls] = useState<Url[]>([]);
-  const [submited, setSubmited] = useState<boolean>(false);
 
   // paginate
   const [page, setPage] = useState<number>(1);
