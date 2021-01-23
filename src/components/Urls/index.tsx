@@ -91,7 +91,7 @@ const Urls = () => {
   return (
     <>
       <section className={ classes.root }>
-        <Grid container spacing={10}>
+        <Grid container>
           <Grid item sm={12}>
             <Box display="flex" justifyContent="space-between">
               <Typography variant="h6" className={classes.title}>
